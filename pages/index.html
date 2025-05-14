@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor家庭教師モード サンプル</title>
+    <style>
+        body {
+            font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'MS Pゴシック', sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .instruction-box {
+            background-color: #e9f7ef;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .sample-question {
+            background-color: #f0f8ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2e856e;
+            border-bottom: 2px solid #2e856e;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #3498db;
+            margin-top: 30px;
+        }
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: Consolas, monospace;
+        }
+        .code-block {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: Consolas, monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .tip {
+            background-color: #fffacd;
+            padding: 10px;
+            border-left: 4px solid #ffd700;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cursor家庭教師モードの使い方</h1>
+    
+    <div class="instruction-box">
+        <h2>Cursorで質問して学ぶ方法</h2>
+        <p>このファイルは、Cursorの「家庭教師モード」で学習するためのサンプルです。</p>
+        <p>実際の学習は、<strong>Cursorのチャットウィンドウ</strong>で行います。以下のようにして質問してみましょう:</p>
+        <ol>
+            <li>Cursorの画面右側にあるチャットアイコンをクリックしてチャットウィンドウを開きます</li>
+            <li>「@.cursorrules」と入力して家庭教師モードを有効にします</li>
+            <li>学びたい内容について質問します</li>
+        </ol>
+    </div>
+
+    <h2>サンプル質問例</h2>
+    
+    <div class="sample-question">
+        <h3>HTMLについて学びたい場合:</h3>
+        <div class="code-block">
+        @.cursorrules
+        HTMLって何ですか？
+        </div>
+        <p>または選択肢形式で学ぶ場合:</p>
+        <div class="code-block">
+        @.cursorrules
+        HTMLについて選択問題で教えてください
+        </div>
+    </div>
+    
+    <div class="sample-question">
+        <h3>CSSについて学びたい場合:</h3>
+        <div class="code-block">
+        @.cursorrules
+        CSSとは何ですか？
+        </div>
+        <p>または特定のプロパティについて:</p>
+        <div class="code-block">
+        @.cursorrules
+        CSSのflexboxの使い方を教えてください
+        </div>
+    </div>
+    
+    <div class="sample-question">
+        <h3>JavaScriptについて学びたい場合:</h3>
+        <div class="code-block">
+        @.cursorrules
+        JavaScriptの変数宣言の違い（var, let, const）を教えてください
+        </div>
+    </div>
+
+    <div class="tip">
+        <p><strong>ヒント:</strong> 質問に対して「ヒント」と返信すればヒントがもらえます。「答え」と返信すれば答えが表示されます。「次の質問」と返信すれば新しい質問に進みます。</p>
+    </div>
+
+    <h2>実際に試してみよう！</h2>
+    <p>このファイルを閉じて、Cursorのチャットウィンドウで「@.cursorrules」と入力し、学びたい内容について質問してみましょう！</p>
+</body>
+</html> 
