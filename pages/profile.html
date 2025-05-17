@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐱 私の自己紹介</title>
+    <style>
+        /* ハチワレ猫テイストのスタイル */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(108, 117, 125, 0.1);
+            border: 2px solid #6c757d;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        h1:before, h1:after {
+            content: "🐱";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.8em;
+        }
+
+        h1:before {
+            left: 20%;
+        }
+
+        h1:after {
+            right: 20%;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-top: 30px;
+            border-bottom: 2px solid #6c757d;
+            padding-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .profile-section {
+            margin-bottom: 30px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #e9ecef;
+            transition: transform 0.2s;
+        }
+
+        .profile-section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(108, 117, 125, 0.1);
+        }
+
+        .hobby-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .hobby-list li {
+            margin-bottom: 10px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .hobby-list li:before {
+            content: "🐾";
+            position: absolute;
+            left: 0;
+            opacity: 0.7;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background-color: #6c757d;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: background-color 0.2s;
+        }
+
+        .skill-tag:hover {
+            background-color: #495057;
+        }
+
+        .contact-info {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 1px solid #e9ecef;
+        }
+
+        a {
+            color: #2c3e50;
+            text-decoration: none;
+            border-bottom: 1px dotted #6c757d;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #495057;
+            border-bottom: 1px solid #495057;
+        }
+
+        .cat-emoji {
+            font-size: 1.2em;
+            margin-right: 5px;
+        }
+
+        /* ハチワレ猫のアクセント */
+        .profile-section:nth-child(odd) {
+            border-left: 4px solid #6c757d;
+        }
+
+        .profile-section:nth-child(even) {
+            border-right: 4px solid #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>私の自己紹介</h1>
+        
+        <div class="profile-section">
+            <h2>🐾 はじめまして</h2>
+            <p>プログラミングを学び始めたばかりの初心者です。HTML、CSS、JavaScriptの基礎から学んでいます。</p>
+        </div>
+
+        <div class="profile-section">
+            <h2>🎯 目標</h2>
+            <ul class="hobby-list">
+                <li>Webアプリケーションを作れるようになる</li>
+                <li>プログラミングの基礎をしっかり身につける</li>
+                <li>GitHubでプロジェクトを管理できるようになる</li>
+                <li>100日間の学習チャレンジを完走する</li>
+            </ul>
+        </div>
+
+        <div class="profile-section">
+            <h2>💻 学習中のスキル</h2>
+            <div class="skill-list">
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">CSS</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">GitHub</span>
+            </div>
+        </div>
+
+        <div class="profile-section">
+            <h2>📚 使用している学習リソース</h2>
+            <ul class="hobby-list">
+                <li>MDN Web Docs</li>
+                <li>ドットインストール</li>
+                <li>Progate</li>
+                <li>Cursor AIアシスタント</li>
+            </ul>
+        </div>
+
+        <div class="profile-section">
+            <h2>🌟 趣味</h2>
+            <ul class="hobby-list">
+                <li>プログラミング学習</li>
+                <li>新しい技術の調査</li>
+                <li>GitHubでの活動</li>
+            </ul>
+        </div>
+
+        <div class="contact-info">
+            <h2>📧 連絡先</h2>
+            <p>GitHub: <a href="https://github.com/Fu-chan-U" target="_blank">@Fu-chan-U</a></p>
+        </div>
+    </div>
+</body>
+</html> 
