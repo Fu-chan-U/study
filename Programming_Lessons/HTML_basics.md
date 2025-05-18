@@ -65,6 +65,33 @@ HTMLは「**H**yper **T**ext **M**arkup **L**anguage」の略で、Webページ�
 <a href="https://www.example.com">リンクテキスト</a>
 ```
 
+#### href属性について
+`href`は「**H**ypertext **REF**erence（ハイパーテキスト参照）」の略で、リンク先を指定するための属性です。「クリックしたらどこに飛ぶか」を指定します。
+
+href属性には以下のような値を設定できます：
+- **Webサイトのアドレス（URL）**: `href="https://www.example.com"`
+- **同じサイト内の別のページ**: `href="contact.html"`
+- **ページ内の特定の場所**（アンカーポイント）: `href="#section1"`
+- **メールを送るリンク**: `href="mailto:info@example.com"`
+- **電話をかけるリンク**: `href="tel:0123456789"`
+
+その他のよく使われるリンク関連の属性：
+- `target="_blank"`: 新しいタブでリンクを開く
+- `download`: リンク先を開くのではなくダウンロードする
+- `title`: リンクの説明（マウスホバーで表示）
+
+```html
+<!-- 外部サイトへのリンク（新しいタブで開く） -->
+<a href="https://www.google.com" target="_blank">Googleを新しいタブで開く</a>
+
+<!-- ページ内リンク -->
+<h2 id="section1">セクション1</h2>
+<a href="#section1">セクション1に移動</a>
+
+<!-- メールリンク -->
+<a href="mailto:contact@example.com?subject=お問い合わせ">メールを送る</a>
+```
+
 ### 画像
 - `<img src="画像のURL" alt="代替テキスト">`: 画像を表示
 
