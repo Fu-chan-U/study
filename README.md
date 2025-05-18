@@ -26,10 +26,11 @@
 
 ## 🏆 最終目標
 
-1. HTML/CSS/JavaScriptの基本をマスターする
-2. シンプルなWebアプリケーションを3つ以上作成する
-3. React.jsの基礎を学び、1つのプロジェクトを完成させる
-4. GitHubで学習の記録を継続し、ポートフォリオを作成する
+1. HTML/CSSの基本をしっかりマスターする（Week 1-4）
+2. JavaScript基礎を学ぶ（Week 5から開始）
+3. シンプルなWebアプリケーションを3つ以上作成する
+4. React.jsの基礎を学び、1つのプロジェクトを完成させる
+5. GitHubで学習の記録を継続し、ポートフォリオを作成する
 
 ## 💻 学習環境
 
@@ -49,19 +50,20 @@ Cursorエディタで効率的に学習するため、家庭教師モードを�
 
 学習テーマ：
 - Cursor基本操作（ショートカットキーや機能）
-- HTML基礎（タグの使い方や基本構造）
-- CSS基礎（スタイリングの方法）
-- JavaScript基礎（プログラミングの基本）
+- HTML基礎（タグの使い方や基本構造）- Week 1-2
+- CSS基礎（スタイリングの方法）- Week 3-4
+- JavaScript基礎（プログラミングの基本）- Week 5から開始
 
 ### 学習ディレクトリ
 
 - `pages/` - Web開発学習用のサンプルコードとガイド
-- `HTML_Lessons/` - HTML学習のレッスンファイル
+- `Programming_Lessons/` - プログラミング学習のレッスンファイル
+  - `Programming_Glossary.md` - 専門用語をわかりやすく説明した用語集
 - `study 2025.5/` - 学習メモとリソース
 
 ## 💻 作成したプロジェクト
 
-- シンプルToDoアプリ - JavaScriptで作成したタスク管理ツール
+- シンプルToDoアプリ - JavaScriptで作成したタスク管理ツール（※Week 5以降に取り組む予定）
 - [自己紹介ページ](/pages/profile.html) - HTMLとCSSで作成した自己紹介サイト
 <!-- プロジェクトができたらここに追加 -->
 
@@ -70,6 +72,7 @@ Cursorエディタで効率的に学習するため、家庭教師モードを�
 - [MDN Web Docs](https://developer.mozilla.org/ja/) - Web開発の基本リファレンス
 - [ドットインストール](https://dotinstall.com/) - 3分動画で学べるプログラミング学習サイト
 - [Progate](https://prog-8.com/) - スライドで学べるプログラミング学習サイト
+- [Programming Glossary](/Programming_Lessons/Programming_Glossary.md) - プログラミング用語をわかりやすく説明
 <!-- 学習リソースをここに追加 -->
 
 ## 🔄 GitHubへの更新方法
