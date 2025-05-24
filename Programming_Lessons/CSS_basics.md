@@ -783,4 +783,344 @@ html {
 }
 ```
 
-`em`はネストされた要素で使うと複合的に計算されるため、複雑なレイアウトでは予想外のサイズになることがあります。対して`rem`は常にルート要素を基準にするため、一貫したサイズ設定が可能です。 
+`em`はネストされた要素で使うと複合的に計算されるため、複雑なレイアウトでは予想外のサイズになることがあります。対して`rem`は常にルート要素を基準にするため、一貫したサイズ設定が可能です。
+
+## Flexbox（フレックスボックス）レイアウト
+
+Flexbox（Flexible Box Layout）は、要素を柔軟に配置するためのCSSレイアウトシステムです。従来のfloatやpositionを使った複雑なレイアウトを、簡単で直感的な方法で実現できます。
+
+### Flexboxの基本概念
+
+Flexboxでは以下の概念が重要です：
+
+1. **Flexコンテナ（親要素）**: `display: flex;` が設定された要素
+2. **Flexアイテム（子要素）**: Flexコンテナの直接の子要素
+3. **主軸（Main Axis）**: Flexアイテムが並ぶ方向
+4. **交差軸（Cross Axis）**: 主軸に垂直な方向
+
+### 基本的な使い方
+
+#### ステップ1: Flexコンテナを作る
+
+```css
+.container {
+    display: flex;  /* 子要素を横に並べる魔法の呪文 */
+}
+```
+
+```html
+<div class="container">
+    <div class="item">アイテム1</div>
+    <div class="item">アイテム2</div>
+    <div class="item">アイテム3</div>
+</div>
+```
+
+#### ステップ2: よく使うプロパティを設定
+
+```css
+.container {
+    display: flex;
+    gap: 20px;                  /* アイテム間のスペース */
+    justify-content: center;    /* 横方向の配置 */
+    align-items: center;        /* 縦方向の配置 */
+}
+```
+
+### Flexコンテナ（親要素）のプロパティ
+
+#### 1. flex-direction（要素の並び方向）
+
+```css
+.container {
+    flex-direction: row;         /* 横並び（デフォルト） */
+    flex-direction: column;      /* 縦並び */
+    flex-direction: row-reverse; /* 横並び（右から左） */
+    flex-direction: column-reverse; /* 縦並び（下から上） */
+}
+```
+
+**身近な例で理解:**
+- `row` → お弁当箱に横向きにおかずを並べる
+- `column` → お弁当箱に縦向きにおかずを積み重ねる
+
+#### 2. justify-content（主軸方向の配置）
+
+```css
+.container {
+    justify-content: flex-start;    /* 左寄せ（デフォルト） */
+    justify-content: center;        /* 中央寄せ */
+    justify-content: flex-end;      /* 右寄せ */
+    justify-content: space-between; /* 両端寄せ、間を均等に */
+    justify-content: space-around;  /* 全体を均等に、左右に半分のスペース */
+    justify-content: space-evenly;  /* 全体を完全に均等に */
+}
+```
+
+**視覚的な例:**
+```
+flex-start:    [A] [B] [C]
+center:          [A] [B] [C]
+flex-end:              [A] [B] [C]
+space-between: [A]     [B]     [C]
+space-around:   [A]   [B]   [C]
+space-evenly:  [A]  [B]  [C]
+```
+
+#### 3. align-items（交差軸方向の配置）
+
+```css
+.container {
+    align-items: stretch;    /* 全アイテムの高さを揃える（デフォルト） */
+    align-items: flex-start; /* 上寄せ */
+    align-items: center;     /* 縦の中央寄せ */
+    align-items: flex-end;   /* 下寄せ */
+    align-items: baseline;   /* テキストのベースラインで揃える */
+}
+```
+
+#### 4. flex-wrap（折り返し設定）
+
+```css
+.container {
+    flex-wrap: nowrap; /* 折り返しなし（デフォルト） */
+    flex-wrap: wrap;   /* 折り返しあり */
+    flex-wrap: wrap-reverse; /* 逆方向に折り返し */
+}
+```
+
+#### 5. gap（アイテム間のスペース）
+
+```css
+.container {
+    gap: 20px;          /* 全方向に20px */
+    gap: 20px 30px;     /* 縦20px、横30px */
+    
+    /* 個別に指定 */
+    row-gap: 20px;      /* 縦方向の間隔 */
+    column-gap: 30px;   /* 横方向の間隔 */
+}
+```
+
+### Flexアイテム（子要素）のプロパティ
+
+#### 1. flex-grow（拡張比率）
+
+```css
+.item {
+    flex-grow: 0; /* 拡張しない（デフォルト） */
+    flex-grow: 1; /* 余白を均等に分配 */
+    flex-grow: 2; /* 他の要素の2倍拡張 */
+}
+```
+
+#### 2. flex-shrink（縮小比率）
+
+```css
+.item {
+    flex-shrink: 1; /* 縮小する（デフォルト） */
+    flex-shrink: 0; /* 縮小しない */
+}
+```
+
+#### 3. flex-basis（基本サイズ）
+
+```css
+.item {
+    flex-basis: auto;  /* 内容に基づく（デフォルト） */
+    flex-basis: 200px; /* 200pxを基本サイズにする */
+    flex-basis: 30%;   /* 30%を基本サイズにする */
+}
+```
+
+#### 4. flex（省略記法）
+
+```css
+.item {
+    flex: 1;          /* flex: 1 1 0%; と同じ */
+    flex: 0 0 200px;  /* grow: 0, shrink: 0, basis: 200px */
+    flex: none;       /* flex: 0 0 auto; と同じ */
+}
+```
+
+### 実践的な例
+
+#### 1. カードを横並びにするレイアウト
+
+```css
+.card-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch;  /* カードの高さを揃える */
+    flex-wrap: wrap;       /* 小さい画面では折り返し */
+}
+
+.card {
+    flex: 1;              /* 全カードが同じ幅 */
+    min-width: 280px;     /* 最小幅を設定 */
+    max-width: 350px;     /* 最大幅を設定 */
+}
+```
+
+#### 2. ヘッダーレイアウト
+
+```css
+.header {
+    display: flex;
+    justify-content: space-between; /* ロゴとメニューを両端に */
+    align-items: center;            /* 縦の中央寄せ */
+    padding: 1rem 2rem;
+}
+
+.logo {
+    flex-shrink: 0; /* ロゴは縮小しない */
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+```
+
+#### 3. 中央配置レイアウト
+
+```css
+.center-layout {
+    display: flex;
+    justify-content: center; /* 横の中央 */
+    align-items: center;     /* 縦の中央 */
+    min-height: 100vh;       /* 画面全体の高さ */
+}
+```
+
+### レスポンシブデザインでのFlexbox
+
+```css
+.responsive-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* スマートフォン対応 */
+@media (max-width: 768px) {
+    .responsive-container {
+        flex-direction: column; /* 縦並びに変更 */
+        align-items: center;
+    }
+}
+```
+
+### よくある使用例とパターン
+
+#### 1. 等幅カラムレイアウト
+
+```css
+.equal-columns {
+    display: flex;
+    gap: 2rem;
+}
+
+.column {
+    flex: 1; /* 全カラムが等幅 */
+}
+```
+
+#### 2. サイドバー付きレイアウト
+
+```css
+.layout {
+    display: flex;
+    gap: 2rem;
+}
+
+.sidebar {
+    flex: 0 0 250px; /* 固定幅250px */
+}
+
+.main-content {
+    flex: 1; /* 残りのスペースを使用 */
+}
+```
+
+#### 3. フッター固定レイアウト
+
+```css
+.page-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header, .footer {
+    flex-shrink: 0; /* 縮小しない */
+}
+
+.main {
+    flex: 1; /* 残りスペースを使用 */
+}
+```
+
+### トラブルシューティング
+
+#### よくある問題と解決法
+
+1. **要素が想定より小さくなる**
+   ```css
+   .item {
+       flex-shrink: 0; /* 縮小を防ぐ */
+       min-width: 200px; /* 最小幅を設定 */
+   }
+   ```
+
+2. **要素が中央に配置されない**
+   ```css
+   .container {
+       display: flex;
+       justify-content: center; /* 横の中央 */
+       align-items: center;     /* 縦の中央 */
+   }
+   ```
+
+3. **余白が期待通りにならない**
+   ```css
+   .container {
+       gap: 20px; /* gapを使用（IE11以外） */
+       /* または */
+       margin: -10px; /* 負のマージンでコンテナを調整 */
+   }
+   .item {
+       margin: 10px; /* アイテムに正のマージン */
+   }
+   ```
+
+### Flexboxの利点
+
+1. **簡単な中央配置**: `justify-content: center; align-items: center;`
+2. **自動的な高さ調整**: `align-items: stretch;`
+3. **レスポンシブ対応**: `flex-wrap: wrap;`
+4. **直感的な並び順制御**: `flex-direction`
+5. **柔軟なサイズ制御**: `flex-grow`, `flex-shrink`
+
+### ブラウザサポート
+
+Flexboxは現代のブラウザでは広くサポートされています：
+- Chrome 29+
+- Firefox 28+
+- Safari 9+
+- Edge 12+
+- Internet Explorer 11（部分的サポート）
+
+### まとめ
+
+Flexboxは現代のCSSレイアウトの核心技術です。特に以下のような場面で威力を発揮します：
+
+- **ナビゲーションメニュー**の配置
+- **カードレイアウト**の実装
+- **フォーム要素**の整列
+- **レスポンシブグリッド**の作成
+- **コンテンツの中央配置**
+
+最初は覚えることが多く感じるかもしれませんが、実際に使ってみることで直感的に理解できるようになります。開発者ツールでリアルタイムにプロパティを変更しながら、効果を確認してみることをお勧めします。 

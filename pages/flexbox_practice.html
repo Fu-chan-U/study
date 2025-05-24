@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox カード練習</title>
+    <style>
+        /* 🎨 基本的なページスタイル */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* 要素のサイズ計算を簡単にする */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* 📦 メインコンテナ：ページ全体を中央に配置 */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* 🔥 ここがFlexboxの核心部分！ */
+        .card-container {
+            display: flex;              /* 子要素を横に並べる魔法の呪文！ */
+            justify-content: center;    /* 横方向の中央寄せ */
+            align-items: stretch;       /* 全カードの高さを揃える */
+            gap: 20px;                  /* カード間のスペース */
+            margin-bottom: 3rem;
+            flex-wrap: wrap;            /* 画面が小さくなったら折り返す */
+        }
+
+        /* 🎯 各カードのスタイル */
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            flex: 1;                    /* 全カードが同じ幅になる */
+            min-width: 280px;           /* 最小幅を設定 */
+            max-width: 350px;           /* 最大幅を設定 */
+        }
+
+        /* ✨ ホバーエフェクト（マウスを乗せたときの効果） */
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* 🔘 ボタンのスタイル */
+        .card-button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .card-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* 📝 説明文のスタイル */
+        .explanation {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            color: white;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .explanation strong {
+            color: #ffeb3b;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        /* 📱 レスポンシブ対応（スマホ対応） */
+        @media (max-width: 768px) {
+            .card-container {
+                flex-direction: column;  /* スマホでは縦並びに変更 */
+                align-items: center;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- メインコンテナ：ページ全体を中央に配置 -->
+    <div class="main-container">
+        <h1>🎨 Flexboxで横並びカード</h1>
+        
+        <!-- 💫 カードコンテナ：この中にカードを横に並べます -->
+        <div class="card-container">
+            
+            <!-- カード1 -->
+            <div class="card">
+                <h3>🌸 春</h3>
+                <p>桜が咲いて、新しい季節の始まりです。暖かい日差しと新緑が美しく、新しいスタートにぴったりの季節。</p>
+                <button class="card-button">詳しく見る</button>
+            </div>
+            
+            <!-- カード2 -->
+            <div class="card">
+                <h3>☀️ 夏</h3>
+                <p>暑い日差しと青い空、海やプールが楽しい季節。夏祭りや花火大会など、楽しいイベントがたくさん。</p>
+                <button class="card-button">詳しく見る</button>
+            </div>
+            
+            <!-- カード3 -->
+            <div class="card">
+                <h3>🍂 秋</h3>
+                <p>紅葉が美しく、美味しい食べ物がたくさん。読書の秋、スポーツの秋、芸術の秋とも呼ばれます。</p>
+                <button class="card-button">詳しく見る</button>
+            </div>
+            
+        </div>
+        
+        <!-- 説明文 -->
+        <div class="explanation">
+            <p>💡 上のカードは <strong>Flexbox</strong> を使って横に並べています！</p>
+            <p>🔧 <strong>display: flex;</strong> で横並びにして、<strong>gap</strong> で間隔を調整。</p>
+            <p>📱 画面のサイズを変えても自動で調整されますよ。</p>
+            <p>🎯 試しにブラウザの幅を変えてみてください！</p>
+        </div>
+    </div>
+</body>
+</html> 
