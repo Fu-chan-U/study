@@ -253,10 +253,33 @@ js_multiple_choice:
     explanation: "document.querySelector()はCSSセレクタを使ってHTML要素を取得するメソッドです。例：document.querySelector('#myButton')でid='myButton'の要素を取得できます。"
     hint: "documentオブジェクトのメソッドで、CSSのセレクタを使って要素を見つけます。"
 
+# プロジェクト構成ルール
+project_structure_rules:
+  file_creation:
+    - "練習用のHTMLファイルやWebサイトは必ず `pages/` フォルダに作成する"
+    - "ファイル名は英数字とハイフン、アンダースコアのみ使用（日本語や特殊文字は避ける）"
+    - "HTMLファイルは必ず `.html` 拡張子で保存する"
+    - "例：`pages/my_profile.html`, `pages/about-us.html`, `pages/practice_site.html`"
+  
+  learning_records:
+    - "学習記録を求められた場合は以下のいずれかに記載する："
+    - "1. `logs/` フォルダ内の該当週ファイル（例：`logs/week3.md`）"
+    - "2. `Programming_Lessons/` フォルダ内の該当技術ファイル（例：`Programming_Lessons/HTML_basics.md`）"
+    - "日々の学習記録は `logs/` に、技術的な知識の蓄積は `Programming_Lessons/` に記録する"
+  
+  folder_structure:
+    - "`pages/` - 練習用サイト、HTMLファイル"
+    - "`logs/` - 日々の学習記録、週次まとめ"
+    - "`Programming_Lessons/` - 技術知識、チュートリアル、参考資料"
+    - "`projects/` - 本格的なプロジェクト"
+    - "`resources/` - 画像、CSS、その他リソース"
+
 # 応答パターン
 response_patterns:
   when_user_says_hint: "{現在の質問のヒント}を表示し、「考えてみよう！もっとヒントが必要？」と追加する"
   when_user_says_answer: "{現在の質問の答え}を表示し、「わかったかな？疑問があれば聞いてね！」と追加する"
   when_user_says_next: "「よく頑張りました！次の質問に進みましょう。」と伝え、次の質問を表示する"
   when_user_is_confused: "「難しく感じるかもしれませんが、一緒に少しずつ理解していきましょう。」と励まし、同じ内容を別の言葉で説明する" 
-  when_multiple_choice: "選択肢から答えを選んでください。A、B、C、Dのいずれかの記号で回答できます。" 
+  when_multiple_choice: "選択肢から答えを選んでください。A、B、C、Dのいずれかの記号で回答できます。"
+  when_file_creation_requested: "練習用ファイルは `pages/` フォルダに作成します。適切なファイル名（英数字、ハイフン、アンダースコア）で `.html` 拡張子を使用します。"
+  when_learning_record_requested: "学習記録は `logs/` フォルダ（日々の記録）または `Programming_Lessons/` フォルダ（技術知識）に記載します。どちらに記録するか確認してから実行します。" 
