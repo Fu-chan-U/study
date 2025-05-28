@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ</title>
+    <style>
+        /* 簡単なスタイルを追加しておきます */
+        body {
+            font-family: sans-serif; /* フォントの種類 */
+            margin: 20px; /* 外側の余白 */
+            background-color: #f4f4f4; /* 背景色 */
+        }
+        .container {
+            background-color: #fff; /* 内容部分の背景色 */
+            padding: 20px; /* 内側の余白 */
+            border-radius: 8px; /* 角の丸み */
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); /* 影 */
+        }
+        h1 {
+            color: #333; /* 文字色 */
+            text-align: center; /* 中央揃え */
+        }
+        label {
+            display: block; /* ブロック要素として表示（改行される） */
+            margin-bottom: 8px; /* 下の余白 */
+            font-weight: bold; /* 太字 */
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: calc(100% - 22px); /* 幅を100%から調整 */
+            padding: 10px; /* 内側の余白 */
+            margin-bottom: 15px; /* 下の余白 */
+            border: 1px solid #ddd; /* 枠線 */
+            border-radius: 4px; /* 角の丸み */
+            box-sizing: border-box; /* paddingとborderを幅に含める */
+        }
+        textarea {
+            height: 150px; /* 高さを指定 */
+            resize: vertical; /* 縦方向のみリサイズ可能にする */
+        }
+        button {
+            background-color: #007bff; /* 背景色 */
+            color: white; /* 文字色 */
+            padding: 10px 15px; /* 内側の余白 */
+            border: none; /* 枠線なし */
+            border-radius: 4px; /* 角の丸み */
+            cursor: pointer; /* マウスカーソルを指マークに */
+            font-size: 16px; /* 文字サイズ */
+        }
+        button:hover {
+            background-color: #0056b3; /* マウスオーバー時の背景色 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>お問い合わせフォーム</h1>
+        <form action="#" method="post">
+            <div>
+                <label for="name">お名前:</label>
+                <input type="text" id="name" name="user_name" required>
+            </div>
+            <div>
+                <label for="email">メールアドレス:</label>
+                <input type="email" id="email" name="user_email" required>
+            </div>
+            <div>
+                <label for="message">お問い合わせ内容:</label>
+                <textarea id="message" name="user_message" required></textarea>
+            </div>
+            <div>
+                <button type="submit">送信</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html> 
