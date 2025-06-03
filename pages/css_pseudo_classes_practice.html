@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS疑似クラス練習ページ</title>
+    <style>
+        /* ここにCSSを書いて練習しましょう！ */
+
+        /* 例：全てのpタグの文字を青にする */
+        p {
+            color: blue;
+        }
+
+        /* ----- :hover の練習 ----- */
+        .hover-button {
+            padding: 10px 20px;
+            background-color: lightgreen;
+            border: 1px solid green;
+            cursor: pointer;
+            transition: background-color 0.3s; /* 色がなめらかに変わるおまじない */
+        }
+        /* TODO: .hover-button にマウスが乗ったら背景色を濃い緑にしてみよう */
+
+
+        /* ----- :link と :visited の練習 ----- */
+        .link-list a {
+            margin: 0 10px;
+            text-decoration: none; /* 下線を消す */
+        }
+        /* TODO: 未訪問リンク（a:link）の色を緑にしてみよう */
+        /* TODO: 訪問済みリンク（a:visited）の色を紫にしてみよう */
+
+
+        /* ----- :active の練習 ----- */
+        .active-button {
+            padding: 10px 20px;
+            background-color: lightcoral;
+            border: 1px solid darkred;
+            cursor: pointer;
+        }
+        /* TODO: .active-button をクリックしている間だけ、背景色を赤くしてみよう */
+
+
+        /* ----- :focus の練習 ----- */
+        .focus-input {
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+        }
+        /* TODO: .focus-input がフォーカスされたら（クリックされたら）枠線の色を青くしてみよう */
+
+
+        /* ----- :first-child と :last-child の練習 ----- */
+        .list-items li {
+            padding: 5px;
+            border-bottom: 1px dotted #eee;
+        }
+        /* TODO: .list-items の最初のli要素の文字を太くしてみよう */
+        /* TODO: .list-items の最後のli要素の背景色を薄い黄色にしてみよう */
+
+
+        /* ----- :nth-child() の練習 ----- */
+        .nth-list-items li {
+            padding: 5px;
+            margin-bottom: 2px;
+        }
+        /* TODO: .nth-list-items の偶数番目のli要素の背景色を薄い灰色にしてみよう */
+        /* TODO: .nth-list-items の3番目のli要素の文字を赤色にしてみよう */
+        /* TODO: .nth-list-items の3の倍数番目のli要素に下線を引いてみよう（例: 3n） */
+
+
+    </style>
+</head>
+<body>
+
+    <h1>CSS疑似クラス練習</h1>
+
+    <p>このページでCSSの疑似クラスを練習しましょう。</p>
+    <p><code>&lt;style&gt;</code> タグの中にTODOコメントがあるので、それに従ってCSSを書いてみてください。</p>
+
+    <hr>
+
+    <h2>:hover の練習</h2>
+    <button class="hover-button">マウスを乗せてみて</button>
+
+    <hr>
+
+    <h2>:link と :visited の練習</h2>
+    <div class="link-list">
+        <a href="#link1" id="link1">未訪問リンクの例 (クリック前)</a>
+        <a href="https://example.com" target="_blank" rel="noopener noreferrer">訪問済みリンクの例 (example.com)</a>
+        <p><small>（注意: example.comは外部サイトです。新しいタブで開きます。）</small></p>
+    </div>
+
+    <hr>
+
+    <h2>:active の練習</h2>
+    <button class="active-button">クリックし続けてみて</button>
+
+    <hr>
+
+    <h2>:focus の練習</h2>
+    <input type="text" class="focus-input" placeholder="ここをクリックしてみて">
+
+    <hr>
+
+    <h2>:first-child と :last-child の練習</h2>
+    <ul class="list-items">
+        <li>項目A</li>
+        <li>項目B</li>
+        <li>項目C</li>
+        <li>項目D</li>
+        <li>項目E</li>
+    </ul>
+
+    <hr>
+
+    <h2>:nth-child() の練習</h2>
+    <ol class="nth-list-items">
+        <li>アイテム1</li>
+        <li>アイテム2</li>
+        <li>アイテム3</li>
+        <li>アイテム4</li>
+        <li>アイテム5</li>
+        <li>アイテム6</li>
+        <li>アイテム7</li>
+        <li>アイテム8</li>
+        <li>アイテム9</li>
+        <li>アイテム10</li>
+    </ol>
+
+</body>
+</html> 
