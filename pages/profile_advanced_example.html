@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ 進化した自己紹介ページ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* ここに高度なCSSを書いていきます！ */
+        :root {
+            --primary-color: #4a90e2; /* メインカラー */
+            --secondary-color: #50e3c2; /* アクセントカラー */
+            --text-color: #333;
+            --bg-color: #f7f9fc;
+            --card-bg-color: #ffffff;
+            --border-radius: 12px;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            --font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* 上から表示 */
+            min-height: 100vh; /* 画面の高さいっぱいに */
+            padding-top: 40px; /* 上部に余白 */
+            padding-bottom: 40px; /* 下部にも余白 */
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px; /* 少し幅広に */
+            background: var(--card-bg-color);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 40px;
+            display: grid; /* グリッドレイアウトのベース */
+            grid-template-columns: 1fr; /* まずは1カラム */
+            gap: 30px;
+            opacity: 0; /* 初期状態は透明 */
+            transform: translateY(20px); /* 初期状態は少し下 */
+            animation: fadeIn 0.8s 0.3s ease-out forwards; /* フェードインアニメーション */
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* --- ヘッダーエリア --- */
+        .header {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 20px;
+            margin-bottom: 20px; /* セクション間のマージン調整 */
+        }
+        .header h1 {
+            font-size: 2.8em;
+            color: var(--primary-color);
+            margin: 0;
+            font-weight: 700;
+            position: relative;
+        }
+         .header h1 .cat-icon { /* 猫アイコンスタイル */
+            display: inline-block;
+            margin: 0 10px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce { /* 猫アイコンのバウンスアニメーション */
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+
+        .header p { /* キャッチフレーズ */
+            font-size: 1.1em;
+            color: #555;
+            margin-top: 10px;
+        }
+
+
+        /* --- メインコンテンツエリア (Gridで2カラムにすることも検討) --- */
+        .main-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* レスポンシブなカラム */
+            gap: 30px;
+        }
+
+        /* --- 各セクションの共通スタイル --- */
+        .section {
+            background-color: var(--card-bg-color);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.08);
+        }
+
+        .section h2 {
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        .section h2 .icon { /* セクションタイトルのアイコン */
+            margin-right: 10px;
+            font-size: 1.2em;
+            color: var(--secondary-color);
+        }
+
+        /* --- リストスタイル --- */
+        .styled-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .styled-list li {
+            padding: 8px 0 8px 30px;
+            position: relative;
+            border-bottom: 1px dashed #f0f0f0;
+        }
+        .styled-list li:last-child {
+            border-bottom: none;
+        }
+        .styled-list li::before {
+            content: '🐾'; /* 猫の足跡アイコン */
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--secondary-color);
+            font-size: 1.1em;
+        }
+
+        /* --- スキルタグ --- */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .skill-tag {
+            background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 10px 18px;
+            border-radius: 25px; /* 丸みを強く */
+            font-size: 0.95em;
+            font-weight: 400;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .skill-tag:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        /* --- 連絡先 --- */
+        .contact-link {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 25px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 10px;
+        }
+        .contact-link:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* フッター */
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        /* レスポンシブ対応の例 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            .header h1 {
+                font-size: 2.2em;
+            }
+            .section h2 {
+                font-size: 1.5em;
+            }
+            .main-content {
+                grid-template-columns: 1fr; /* スマホでは1カラムに */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><span class="cat-icon">🐾</span>ふーちゃんのポートフォリオ<span class="cat-icon">🐾</span></h1>
+            <p>プログラミングの世界を探検中！HTML, CSS, JavaScriptを学んでいます。</p>
+        </header>
+
+        <div class="main-content">
+            <section class="section profile-intro">
+                <h2><span class="icon">👤</span>自己紹介</h2>
+                <p>はじめまして！ふーちゃんです。AIアシスタントと一緒にプログラミングの基礎を楽しく学んでいます。美しいデザインと使いやすいウェブサイトを作ることを目指しています。</p>
+                <p>このページは、これまでに学んだHTMLとCSSの知識を活かして作成したものです。どうぞ、ゆっくりご覧ください！</p>
+            </section>
+
+            <section class="section skills">
+                <h2><span class="icon">💻</span>学習中のスキル</h2>
+                <div class="skills-container">
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">Flexbox</span>
+                    <span class="skill-tag">CSS Grid (勉強中)</span>
+                    <span class="skill-tag">JavaScript (これから！)</span>
+                    <span class="skill-tag">Git & GitHub</span>
+                    <span class="skill-tag">レスポンシブデザイン</span>
+                </div>
+            </section>
+
+            <section class="section goals">
+                <h2><span class="icon">🎯</span>学習目標</h2>
+                <ul class="styled-list">
+                    <li>インタラクティブなWebアプリケーションを開発する</li>
+                    <li>モダンなCSSテクニックを使いこなす</li>
+                    <li>JavaScriptで動的なページを作成する</li>
+                    <li>チーム開発で役立つGitスキルを習得する</li>
+                    <li>100日学習チャレンジを笑顔で完走！</li>
+                </ul>
+            </section>
+
+            <section class="section hobbies">
+                <h2><span class="icon">💖</span>趣味・好きなこと</h2>
+                <ul class="styled-list">
+                    <li>新しいコードやデザインのアイデアを試すこと</li>
+                    <li>可愛い猫の動画を見ること</li>
+                    <li>美味しいものを食べること</li>
+                    <li>問題を解決したときの達成感</li>
+                    <li>GitHubで他の人のプロジェクトを見ること</li>
+                </ul>
+            </section>
+        </div>
+
+        <section class="section contact">
+            <h2><span class="icon">📧</span>連絡先</h2>
+            <p>GitHubで私の活動をチェックできます！お気軽にどうぞ！</p>
+            <a href="https://github.com/Fu-chan-U" target="_blank" rel="noopener noreferrer" class="contact-link">GitHubプロフィールへ</a>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2025 ふーちゃん. All Rights Reserved.</p>
+            <p>AIアシスタントと一緒に愛情込めて作りました💖</p>
+        </footer>
+    </div>
+</body>
+</html> 
