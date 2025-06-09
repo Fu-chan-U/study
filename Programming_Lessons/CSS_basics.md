@@ -170,6 +170,69 @@ HTML要素に直接style属性を使って書きます。
 - **一般兄弟セレクタ**: ~ で区切る → `h1 ~ p`（h1と同じ親を持つ後に来るすべてのp）
   - 例: `h2 ~ p` は、`<h2>` 要素の後ろにある全ての兄弟の `<p>` 要素を選択します。途中に別の種類の要素があっても、それを飛び越えて選択します。レストランの行列で、`h2`さんの後ろに並んでいる全ての`p`さんを選ぶイメージです（途中に別の人がいても構いません）。
 
+### 疑似クラス（Pseudo-classes）
+疑似クラスは、特定の状態にある要素や特定の位置にある要素を選択するために使います。コロン（:）で始まります。
+
+#### ユーザーアクション関連
+- **`:hover`**: マウスカーソルが要素の上に乗っているとき
+  - 例: `button:hover { background-color: lightblue; }` （ボタンにマウスを乗せると背景色が変わる）
+- **`:focus`**: 要素がフォーカスされているとき（入力欄がアクティブなど）
+  - 例: `input:focus { border-color: blue; }` （入力欄がクリックされると枠線が青くなる）
+- **`:active`**: 要素がクリックされている瞬間
+  - 例: `button:active { transform: scale(0.95); }` （ボタンがクリックされると少し小さくなる）
+
+#### リンク状態関連
+- **`:link`**: まだ訪れていないリンク
+  - 例: `a:link { color: blue; }` （未訪問のリンクは青色）
+- **`:visited`**: 一度訪れたことがあるリンク
+  - 例: `a:visited { color: purple; }` （訪問済みのリンクは紫色）
+
+#### 位置関連
+- **`:first-child`**: 親要素の最初の子要素
+  - 例: `li:first-child { font-weight: bold; }` （リストの最初の項目を太字にする）
+- **`:last-child`**: 親要素の最後の子要素
+  - 例: `li:last-child { margin-bottom: 0; }` （リストの最後の項目の下余白をなくす）
+- **`:nth-child(n)`**: 親要素のn番目の子要素
+  - 例: `li:nth-child(2) { color: red; }` （2番目のリスト項目を赤色にする）
+  - 例: `li:nth-child(odd) { background-color: lightgray; }` （奇数番目の項目に背景色をつける）
+  - 例: `li:nth-child(even) { background-color: white; }` （偶数番目の項目に背景色をつける）
+
+**疑似クラスの使用例:**
+```css
+/* ナビゲーションリンクのスタイリング（LVHA順） */
+nav a:link {
+  color: #0066cc;           /* 未訪問リンクは青色 */
+  text-decoration: none;    /* 下線なし */
+}
+
+nav a:visited {
+  color: #663399;           /* 訪問済みリンクは紫色 */
+}
+
+nav a:hover {
+  color: #ff3300;           /* ホバー時は赤色 */
+  text-decoration: underline; /* 下線表示 */
+}
+
+nav a:active {
+  color: #ff6600;           /* アクティブ時はオレンジ色 */
+}
+
+/* リストの最初と最後の項目にスタイルを適用 */
+ul li:first-child {
+  border-top: 2px solid #ccc;
+}
+
+ul li:last-child {
+  border-bottom: 2px solid #ccc;
+}
+
+/* テーブルの偶数行に背景色をつける（ストライプ効果） */
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+```
+
 ## よく使うCSSプロパティ
 
 ### テキスト関連
