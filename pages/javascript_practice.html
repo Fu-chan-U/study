@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript練習ページ</title>
+    <style>
+        /* 簡単なスタイルで見やすくします */
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f4f8;
+        }
+        .container {
+            text-align: center;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        p {
+            font-size: 1.2em;
+            color: #333;
+            min-height: 1.5em; /* メッセージが変わってもガタつかないように高さを確保 */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #4a90e2;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #357abd;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>JavaScriptの魔法を体験！</h1>
+        <p id="message">ここにメッセージが表示されます。</p>
+        <button id="changeButton">クリックしてみて！</button>
+    </div>
+
+    <!-- 外部のJavaScriptファイルを読み込む -->
+    <!-- bodyタグの最後に書くのがポイント！ -->
+    <script src="../resources/js/main.js"></script>
+
+</body>
+</html> 
